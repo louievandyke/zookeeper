@@ -1,0 +1,15 @@
+{{ range $_, $instance := service (printf "%s|passing" (env "ZK_CLIENT_SVC_NAME")) -}}
+   {{ range $_, $alloc_index_tag := $instance.Tags }}
+      {{ if $alloc_index_tag | regexMatch "alloc_index=(d+)" -}}
+         {{ range $_, $peer1_port_tag := $instance.Tags }}
+             {{ if $peer1_port_tag | regexMatch      "peer1_port=(d+)" -}}
+                {{ range $_, $peer2_port_tag := $instance.Tags }}
+                    {{ if $peer2_port_tag | regexMatch "peer2_port=(d+)" -}}
+                       server.{{ $alloc_index_tag | replaceAll "alloc_index=" "" | parseInt | add 1 }}={{ $instance.Address }}:{{ $peer1_port_tag | replaceAll "peer1_port=" "" }}:{{ $peer2_port_tag | replaceAll "peer2_port=" "" }};{{ $instance.Port }}
+                    {{ end }}
+                {{ end }}
+             {{ end }}
+         {{ end }}
+      {{ end }}
+   {{ end }}
+ {{ end }}
