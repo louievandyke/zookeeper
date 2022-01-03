@@ -4,7 +4,7 @@ This is a levant template for generating a Zookeeper job for Nomad. It was based
 around some example Learn guides we have surrounding using Levant to abstract job
 specs. Referencing them may prove useful if you intend to modify the template:
 
-- [DRY Nomad Job Specs with Levant](https://learn.hashicorp.com/tutorials/nomad/dry-jobs-levants)
+- [DRY Nomad Job Specs with Levant](https://learn.hashicorp.com/tutorials/nomad/dry-jobs-levant)
 - [Make Abstract Job Specs with Levant](https://learn.hashicorp.com/tutorials/nomad/levant-abstract-jobs)
 
 
