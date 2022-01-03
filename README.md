@@ -1,4 +1,3 @@
-# zookeeper
 # Zookeeper Job Template
 
 This is a levant template for generating a Zookeeper job for Nomad. It was based
